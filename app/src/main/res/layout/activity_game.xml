@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uz.gita.a4pics1wordumidjon.ui.game.GameActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionBar" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/actionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/action_bar"
+        android:elevation="0dp"
+        app:elevation="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/buttonBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:padding="8dp"
+                android:src="@drawable/ic_btn_back"
+                android:tint="@color/white" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/bg_coin"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/ic_coin" />
+
+                <TextView
+                    android:id="@+id/tvCoin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="@font/averia_libre"
+                    android:text="999"
+                    android:textColor="@color/white"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="@+id/actionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/actionBar">
+
+        <ImageView
+            android:id="@+id/img_badge"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_badge" />
+
+        <TextView
+            android:id="@+id/tvLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/averia_libre"
+            android:text="15"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame">
+
+        <FrameLayout
+            android:id="@+id/backImgOne"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/img_back"
+            app:layout_constraintBottom_toTopOf="@id/backImgThree"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/backImgTwo"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageOne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:background="@color/white" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/backImgTwo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/img_back"
+            app:layout_constraintBottom_toTopOf="@id/backImgFour"
+            app:layout_constraintLeft_toRightOf="@id/backImgOne"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:background="@color/white" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/backImgThree"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/img_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/backImgFour"
+            app:layout_constraintTop_toBottomOf="@id/backImgOne">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:background="@color/white" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/backImgFour"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/img_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/backImgThree"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backImgTwo">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageFour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="6dp"
+                android:background="@color/white" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/answerLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="4dp"
+        app:layout_constraintBottom_toTopOf="@id/optionLine1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/answers_button_style"
+            android:gravity="center"
+            tools:text="A" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/optionLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:gravity="center"
+        android:padding="4dp"
+        app:layout_constraintBottom_toTopOf="@id/optionLine2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/optionLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:gravity="center"
+        android:padding="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/options_button_style"
+            android:gravity="center"
+            tools:text="A" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/revealLetter"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@drawable/btn_help"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/optionLine2"
+        app:layout_constraintStart_toStartOf="@+id/optionLine2"
+        app:layout_constraintTop_toBottomOf="@+id/optionLine2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/averia_libre"
+            android:text="Reveal a letter"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="6dp"
+            android:layout_marginVertical="6dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/ic_coin" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/averia_libre"
+                android:text="-8"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
