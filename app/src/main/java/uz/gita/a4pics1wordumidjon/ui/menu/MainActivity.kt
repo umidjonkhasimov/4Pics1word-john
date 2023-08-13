@@ -30,18 +30,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun setListeners() {
         findViewById<Button>(R.id.btnAbout).setOnClickListener {
-            startActivity(Intent(this, AboutActivity::class.java))
+            startActivity(Intent(this@MainActivity, AboutActivity::class.java))
         }
 
         findViewById<Button>(R.id.btnQuit).setOnClickListener {
             finish()
         }
         btnContinue.setOnClickListener {
-            startActivity(Intent(this, GameActivity::class.java))
+            startActivity(Intent(this@MainActivity, GameActivity::class.java))
         }
         btnNewGame.setOnClickListener {
             myPrefs.clear()
-            startActivity(Intent(this, GameActivity::class.java))
+            startActivity(Intent(this@MainActivity, GameActivity::class.java))
         }
     }
 
